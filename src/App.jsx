@@ -13,5 +13,31 @@ export default function App() {
 
   useEffect(fetchActor, []);
 
-  return <></>;
+  return (
+    <>
+      <div className="container">
+        <h1>Attori</h1>
+        <div className="row g-3">
+          {actors.map((actor) => (
+            <div key={actor.id} className="col-3">
+              <div className="card h-100">
+                <img
+                  src={actor.image}
+                  className="card-img-top"
+                  alt={actor.name}
+                ></img>
+                <div className="card-body">
+                  <h4>{actor.name}</h4>
+                  <p>{actor.birth_year}</p>
+                  <p>{actor.nationality}</p>
+                  <p>{actor.biography}</p>
+                  <p>{actor.awards}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </>
+  );
 }
