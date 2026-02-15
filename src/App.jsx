@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import "./App.css";
 export default function App() {
   const [actors, setActors] = useState([]);
 
@@ -23,15 +24,15 @@ export default function App() {
               <div className="card h-100">
                 <img
                   src={actor.image}
-                  className="card-img-top"
+                  className="card-img-top actor-img"
                   alt={actor.name}
                 ></img>
                 <div className="card-body">
                   <h4>{actor.name}</h4>
-                  <p>{actor.birth_year}</p>
+                  <p className="fw-medium">{actor.birth_year}</p>
                   <p>{actor.nationality}</p>
-                  <p>{actor.biography}</p>
-                  <p>{actor.awards}</p>
+                  <p className="fw-semibold">{actor.biography}</p>
+                  <p className="text-primary">{actor.awards}</p>
                 </div>
               </div>
             </div>
